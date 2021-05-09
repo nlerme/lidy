@@ -1,9 +1,0 @@
-[ TODO ]
---------
-
-Things to do or at least think about doing in the future. Name in
-parenthesis means that person has taken on this project.
-
-* Add other matrical operations (rank, inverse, trace, determinant, decomposition, eigenvalues / eigenvectors), etc.
-* Parallelise matrical algorithms thanks to threads with a cross-platform library like boost.
-* Add other output formats to save sparse matrices.
