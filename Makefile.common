@@ -1,4 +1,4 @@
-#----------------------- Initialisation of misc. variables --------------------------
+#----------------------- Makefile variables --------------------------
 PROJECT_NAME   = Lidy
 VERSION        = 1.2.0
 GLOBAL_TARGET  = $(PROJECT_NAME)-$(VERSION)
