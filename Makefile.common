@@ -1,16 +1,6 @@
-#####################################################################################
-#                                                                                   #
-#                            Common Compiling Makefile                              #
-#                                                                                   #
-#####################################################################################
-
-
 #----------------------- Initialisation of misc. variables --------------------------
-
 PROJECT_NAME   = Lidy
 VERSION        = 1.2.0
 GLOBAL_TARGET  = $(PROJECT_NAME)-$(VERSION)
-DESCRIPTION    = A small C library for sparse matrices managing
-AUTHORS        = Nicolas LERME
-EMAILS         = nicolas.lerme@free.fr
-WEBSITE        = http://test.nicolas.lerme.free.fr
+DESCRIPTION    = A small cross-platform C library for sparse matrices handling
+AUTHORS        = Nicolas Lermé
