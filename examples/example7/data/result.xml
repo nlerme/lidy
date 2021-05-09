@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<SparseMatrix nbRows="5" nbColumns="5">
+  <Cell rowIndex="0" columnIndex="0">-0.25</Cell>
+  <Cell rowIndex="0" columnIndex="1">23.82</Cell>
+  <Cell rowIndex="0" columnIndex="4">-0.34</Cell>
+  <Cell rowIndex="1" columnIndex="0">6.09</Cell>
+  <Cell rowIndex="1" columnIndex="1">74.32</Cell>
+  <Cell rowIndex="1" columnIndex="2">-113.26</Cell>
+  <Cell rowIndex="1" columnIndex="4">-47.77</Cell>
+  <Cell rowIndex="2" columnIndex="0">13.47</Cell>
+  <Cell rowIndex="2" columnIndex="4">9.82</Cell>
+  <Cell rowIndex="3" columnIndex="1">-59.06</Cell>
+  <Cell rowIndex="3" columnIndex="3">-6.18</Cell>
+  <Cell rowIndex="4" columnIndex="0">-99.31</Cell>
+  <Cell rowIndex="4" columnIndex="3">89.17</Cell>
+</SparseMatrix>

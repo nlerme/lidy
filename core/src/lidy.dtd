@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT SparseMatrix (Cell+)>
+<!ATTLIST SparseMatrix
+   nbRows    CDATA #REQUIRED
+   nbColumns CDATA #REQUIRED
+>
+
+<!ELEMENT Cell (#PCDATA)>
+<!ATTLIST Cell
+   rowIndex    CDATA #REQUIRED
+   columnIndex CDATA #REQUIRED
+>

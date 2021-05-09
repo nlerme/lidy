@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<SparseMatrix nbRows="5" nbColumns="5">
+  <Cell rowIndex="0" columnIndex="1">23.82</Cell>
+  <Cell rowIndex="0" columnIndex="4">-19.30</Cell>
+  <Cell rowIndex="4" columnIndex="3">89.17</Cell>
+  <Cell rowIndex="3" columnIndex="3">-26.73</Cell>
+  <Cell rowIndex="1" columnIndex="0">6.09</Cell>
+  <Cell rowIndex="2" columnIndex="4">9.82</Cell>
+  <Cell rowIndex="1" columnIndex="2">-65.49</Cell>
+</SparseMatrix>
