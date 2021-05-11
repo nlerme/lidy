@@ -1,18 +1,10 @@
-#####################################################################################
-#                                                                                   #
-#                          Compiling Makefile for example3                          #
-#                                                                                   #
-#####################################################################################
-
-
-#----------------------- Initialisation of misc. variables --------------------------
+#------------------------------- Makefile variable ----------------------------------
 include ../../Makefile.common
 CXX          = gcc
 CXXFLAGS     = -O3 -Wall -g
 BIN_DIR      = ../../bin
 OBJ_DIR      = ../../obj
 SRC_DIR      = .
-COLOR_BIN    = $(BIN_DIR)/color
 INC_DIR      = ../../core/include
 LIB_DIR      = ../../lib
 INCS         = -I$(INC_DIR)
@@ -20,38 +12,37 @@ LIBS         = -L$(LIB_DIR) -l$(GLOBAL_TARGET)
 FILES_EXT    = c
 SRC          = $(notdir $(wildcard $(SRC_DIR)/*.$(FILES_EXT)))
 OBJ          = $(SRC:%.$(FILES_EXT)=$(OBJ_DIR)/%.o)
-DESCRIPTION  = Example 3 - Substraction of matrices
+DESCRIPTION  = Sparse matrix subtraction
 LOCAL_TARGET = example3
-
 
 #---------------------------------- Makefile core -----------------------------------
 all: header depend $(LOCAL_TARGET) footer
 
 header:
-	@echo "`$(COLOR_BIN) ltwhite`[ $(DESCRIPTION) ]`$(COLOR_BIN) off`"
+	@echo "[ $(DESCRIPTION) ]"
 
 depend:
-	@echo -n "`$(COLOR_BIN) ltyellow`+ Generate dependencies`$(COLOR_BIN) off` : "
+	@echo -n "+ Generate dependencies : "
 ifneq ($(strip $(SRC)),)
 	@$(CXX) $(INCS) -MM $(SRC:%=$(SRC_DIR)/%) \
 	| sed -e 's:^[^ ]:$(OBJ_DIR)/&:' > Makefile.depend
 endif
-	@echo "`$(COLOR_BIN) ltred`OK`$(COLOR_BIN) off`"
+	@echo "OK"
 
 $(LOCAL_TARGET): $(OBJ)
-	@echo -n "`$(COLOR_BIN) ltyellow`+ Build $@ `$(COLOR_BIN) off`: "
+	@echo -n "+ Build $@ : "
 	@$(CXX) $(CXXFLAGS) $(INCS) $^ $(LIBS) -o $@
-	@echo "`$(COLOR_BIN) ltred`OK`$(COLOR_BIN) off`"
+	@echo "OK"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(FILES_EXT)
-	@echo -n "`$(COLOR_BIN) ltyellow`+ Compile $(notdir $@)`$(COLOR_BIN) off` : "
+	@echo -n "+ Compile $(notdir $@) : "
 	@$(CXX) $(CXXFLAGS) $(INCS) -c $< -o $@
-	@echo "`$(COLOR_BIN) ltred`OK`$(COLOR_BIN) off`"
+	@echo "OK"
 
 clean: header
-	@echo -n "`$(COLOR_BIN) ltyellow`+ Delete objects and bin`$(COLOR_BIN) off` : "
+	@echo -n "+ Delete objects and bin : "
 	@\rm -rf $(LOCAL_TARGET) $(OBJ)
-	@echo "`$(COLOR_BIN) ltred`OK`$(COLOR_BIN) off`"
+	@echo "OK"
 
 footer:
 
