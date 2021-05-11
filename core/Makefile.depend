@@ -1,25 +1,25 @@
-../obj/cell.o: src/cell.c include/cell.h include/types.h
 ../obj/linked_list.o: src/linked_list.c include/linked_list.h include/types.h \
-  include/node.h include/cell.h
-../obj/node.o: src/node.c include/node.h include/cell.h include/types.h
-../obj/rand.o: src/rand.c include/rand.h include/types.h
+ include/node.h include/cell.h
 ../obj/sparse_matrix.o: src/sparse_matrix.c /usr/include/libxml2/libxml/parser.h \
-  /usr/include/libxml2/libxml/xmlversion.h \
-  /usr/include/libxml2/libxml/xmlexports.h \
-  /usr/include/libxml2/libxml/tree.h \
-  /usr/include/libxml2/libxml/xmlstring.h \
-  /usr/include/libxml2/libxml/xmlregexp.h \
-  /usr/include/libxml2/libxml/dict.h /usr/include/libxml2/libxml/hash.h \
-  /usr/include/libxml2/libxml/valid.h \
-  /usr/include/libxml2/libxml/xmlerror.h \
-  /usr/include/libxml2/libxml/list.h \
-  /usr/include/libxml2/libxml/xmlautomata.h \
-  /usr/include/libxml2/libxml/entities.h \
-  /usr/include/libxml2/libxml/encoding.h \
-  /usr/include/libxml2/libxml/xmlIO.h \
-  /usr/include/libxml2/libxml/globals.h /usr/include/libxml2/libxml/SAX.h \
-  /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
-  /usr/include/libxml2/libxml/xmlmemory.h \
-  /usr/include/libxml2/libxml/threads.h include/sparse_matrix.h \
-  include/types.h include/cell.h include/linked_list.h include/node.h \
-  include/node.h include/defines.h
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlIO.h \
+ /usr/include/libxml2/libxml/globals.h /usr/include/libxml2/libxml/SAX2.h \
+ /usr/include/libxml2/libxml/xlink.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h include/sparse_matrix.h \
+ include/types.h include/cell.h include/linked_list.h include/node.h \
+ include/node.h include/defines.h
+../obj/node.o: src/node.c include/node.h include/cell.h include/types.h
+../obj/cell.o: src/cell.c include/cell.h include/types.h
+../obj/rand.o: src/rand.c include/rand.h include/types.h

@@ -1,5 +1,5 @@
 ../../obj/example2.o: example2.c ../../core/include/lidy.h \
-  ../../core/include/defines.h ../../core/include/types.h \
-  ../../core/include/rand.h ../../core/include/node.h \
-  ../../core/include/cell.h ../../core/include/linked_list.h \
-  ../../core/include/sparse_matrix.h
+ ../../core/include/defines.h ../../core/include/types.h \
+ ../../core/include/rand.h ../../core/include/node.h \
+ ../../core/include/cell.h ../../core/include/linked_list.h \
+ ../../core/include/sparse_matrix.h

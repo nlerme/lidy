@@ -22,7 +22,7 @@ header:
 	@echo "[ $(DESCRIPTION) ]"
 
 depend:
-	@echo -n "+ Generate dependencies : "
+	@echo -n "  + Generate dependencies : "
 ifneq ($(strip $(SRC)),)
 	@$(CXX) $(INCS) -MM $(SRC:%=$(SRC_DIR)/%) \
 	| sed -e 's:^[^ ]:$(OBJ_DIR)/&:' > Makefile.depend
@@ -30,17 +30,17 @@ endif
 	@echo "OK"
 
 $(LOCAL_TARGET): $(OBJ)
-	@echo -n "+ Build $@ : "
+	@echo -n "  + Build $@ : "
 	@$(CXX) $(CXXFLAGS) $(INCS) $^ $(LIBS) -o $@
 	@echo "OK"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(FILES_EXT)
-	@echo -n "+ Compile $(notdir $@) : "
+	@echo -n "  + Compile $(notdir $@) : "
 	@$(CXX) $(CXXFLAGS) $(INCS) -c $< -o $@
 	@echo "OK"
 
 clean: header
-	@echo -n "+ Delete objects and bin : "
+	@echo -n "  + Delete objects and bin : "
 	@\rm -rf $(LOCAL_TARGET) $(OBJ)
 	@echo "OK"
 

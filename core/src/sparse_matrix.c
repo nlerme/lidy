@@ -92,7 +92,7 @@ void Lidy_SetValue( pSSparseMatrix SparseMatrix, Real Value, unsigned int RowInd
 
 		Node     = SparseMatrix->m_pRowsList->m_pHead;
 		LastNode = NULL;
-		Insert   = TRUE;
+		Insert   = B_TRUE;
 		Index    = 0;
 
 		/* Rows */
@@ -104,7 +104,7 @@ void Lidy_SetValue( pSSparseMatrix SparseMatrix, Real Value, unsigned int RowInd
 			{
 				if( Cell->m_RowIndex == RowIndex )
 				{
-					Insert = FALSE;
+					Insert = B_FALSE;
 					break;
 				}
 				else if( Cell->m_RowIndex > RowIndex )
@@ -138,14 +138,14 @@ void Lidy_SetValue( pSSparseMatrix SparseMatrix, Real Value, unsigned int RowInd
 		else
 		{
 			Index    = 0;
-			DoLinks  = TRUE;
+			DoLinks  = B_TRUE;
 			LastCell = NULL;
 
 			while( Cell )
 			{
 				if( Cell->m_ColumnIndex == ColumnIndex )
 				{
-					DoLinks = FALSE;
+					DoLinks = B_FALSE;
 					break;
 				}
 				else if( Cell->m_ColumnIndex > ColumnIndex )
@@ -182,7 +182,7 @@ void Lidy_SetValue( pSSparseMatrix SparseMatrix, Real Value, unsigned int RowInd
 		/* Columns */
 		Node     = SparseMatrix->m_pColumnsList->m_pHead;
 		LastNode = NULL;
-		Insert   = TRUE;
+		Insert   = B_TRUE;
 		Index    = 0;
 
 		while( Node )
@@ -193,7 +193,7 @@ void Lidy_SetValue( pSSparseMatrix SparseMatrix, Real Value, unsigned int RowInd
 			{
 				if( Cell->m_ColumnIndex == ColumnIndex )
 				{
-					Insert = FALSE;
+					Insert = B_FALSE;
 					break;
 				}
 				else if( Cell->m_ColumnIndex > ColumnIndex )
@@ -228,13 +228,13 @@ void Lidy_SetValue( pSSparseMatrix SparseMatrix, Real Value, unsigned int RowInd
 		{
 			Index    = 0;
 			LastCell = NULL;
-			DoLinks  = TRUE;
+			DoLinks  = B_TRUE;
 
 			while( Cell )
 			{
 				if( Cell->m_RowIndex == RowIndex )
 				{
-					DoLinks = FALSE;
+					DoLinks = B_FALSE;
 					break;
 				}
 				if( Cell->m_RowIndex > RowIndex )
@@ -317,10 +317,10 @@ Bool Lidy_DeleteCellInSparseMatrix( pSSparseMatrix SparseMatrix, unsigned int Ro
 
 
 	if( ColumnIndex >= SparseMatrix->m_NbColumns || RowIndex >= SparseMatrix->m_NbRows || !SparseMatrix || !SparseMatrix->m_pRowsList || !SparseMatrix->m_pColumnsList )
-		return FALSE;
+		return B_FALSE;
 
 	Node1 = SparseMatrix->m_pRowsList->m_pHead;
-	Ok    = FALSE;
+	Ok    = B_FALSE;
 
 	while( Node1 )
 	{
@@ -334,7 +334,7 @@ Bool Lidy_DeleteCellInSparseMatrix( pSSparseMatrix SparseMatrix, unsigned int Ro
 				{
 					if( Cell->m_ColumnIndex == ColumnIndex )
 					{
-						Ok = TRUE;
+						Ok = B_TRUE;
 						break;
 					}
 					else if( Cell->m_ColumnIndex > ColumnIndex )
@@ -357,10 +357,10 @@ Bool Lidy_DeleteCellInSparseMatrix( pSSparseMatrix SparseMatrix, unsigned int Ro
 	}
 
 	if( !Ok )
-		return FALSE;
+		return B_FALSE;
 
 	Node2 = SparseMatrix->m_pColumnsList->m_pHead;
-	Ok    = FALSE;
+	Ok    = B_FALSE;
 
 	while( Node2 )
 	{
@@ -374,7 +374,7 @@ Bool Lidy_DeleteCellInSparseMatrix( pSSparseMatrix SparseMatrix, unsigned int Ro
 				{	
 					if( Cell->m_RowIndex == RowIndex )
 					{
-						Ok = TRUE;
+						Ok = B_TRUE;
 						break;
 					}
 					else if( Cell->m_RowIndex > RowIndex )
@@ -397,7 +397,7 @@ Bool Lidy_DeleteCellInSparseMatrix( pSSparseMatrix SparseMatrix, unsigned int Ro
 	}
 
 	if( !Ok )
-		return FALSE;
+		return B_FALSE;
 
 	if( Index2 == 0 )
 	{
@@ -435,7 +435,7 @@ Bool Lidy_DeleteCellInSparseMatrix( pSSparseMatrix SparseMatrix, unsigned int Ro
 
 	Lidy_DeleteCell(Cell);
 
-	return TRUE;
+	return B_TRUE;
 }
 
 void Lidy_DisplaySparseMatrix( pSSparseMatrix SparseMatrix )
@@ -985,7 +985,7 @@ Bool Lidy_SaveSparseMatrixInXMLFile( pSSparseMatrix SparseMatrix, const char * F
 	xmlDocPtr Doc = NULL;
 	xmlNodePtr RootNode = NULL, ChildNode = NULL;
 	char buffer[100];
-	Bool Ok = FALSE;
+	Bool Ok = B_FALSE;
 
 
 	if( SparseMatrix && SparseMatrix->m_pRowsList && SparseMatrix->m_pColumnsList && (Doc = xmlNewDoc(BAD_CAST "1.0")) )
@@ -1025,7 +1025,7 @@ Bool Lidy_SaveSparseMatrixInXMLFile( pSSparseMatrix SparseMatrix, const char * F
 					}
 
 					if( xmlSaveFormatFileEnc(Filename, Doc, XML_ENCODING, 1) )
-						Ok = TRUE;
+						Ok = B_TRUE;
 				}
 			}
 		}
@@ -1042,7 +1042,7 @@ Bool Lidy_SaveSparseMatrixInXMLFile( pSSparseMatrix SparseMatrix, const char * F
 Bool Lidy_SaveSparseMatrix( pSSparseMatrix SparseMatrix, const char * Filename )
 {
 	char * position = NULL, * extension = NULL;
-	Bool Result = FALSE;
+	Bool Result = B_FALSE;
 	unsigned int i, j = 0, str_length, pos;
 
 

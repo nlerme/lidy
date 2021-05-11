@@ -34,8 +34,8 @@ typedef float Real;
 /* Define the Boolean datatype */
 typedef enum
 {
-	TRUE = 1,
-	FALSE = 0
+	B_TRUE = 1,
+	B_FALSE = 0
 } Bool;
 
 #ifdef __cplusplus

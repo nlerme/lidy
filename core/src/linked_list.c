@@ -42,7 +42,7 @@ Bool Lidy_InsertNodeToTail( pSLinkedList LinkedList, pSCell Cell )
 
 
 	if( !LinkedList || !(Node = Lidy_CreateNode(Cell, NULL)) )
-		return FALSE;
+		return B_FALSE;
 
 	if( !LinkedList->m_pHead )
 		LinkedList->m_pHead = Node;	/* The first node is always contained into the head list */
@@ -60,7 +60,7 @@ Bool Lidy_InsertNodeToTail( pSLinkedList LinkedList, pSCell Cell )
 	/* Increase the number of nodes */
 	LinkedList->m_NbNodes++;
 
-	return TRUE;
+	return B_TRUE;
 }
 
 Bool Lidy_InsertNodeInPosition( pSLinkedList LinkedList, unsigned int Position, pSCell Cell )
@@ -70,7 +70,7 @@ Bool Lidy_InsertNodeInPosition( pSLinkedList LinkedList, unsigned int Position, 
 
 
 	if( !LinkedList || Position < 0 || Position > LinkedList->m_NbNodes || !(Node = Lidy_CreateNode(Cell, NULL)) )
-		return FALSE;
+		return B_FALSE;
 
 	if( !LinkedList->m_pHead )
 		LinkedList->m_pHead = Node;	/* The first node is always contained into the head list */
@@ -98,7 +98,7 @@ Bool Lidy_InsertNodeInPosition( pSLinkedList LinkedList, unsigned int Position, 
 
 	LinkedList->m_NbNodes++;
 
-	return TRUE;
+	return B_TRUE;
 }
 
 void Lidy_ClearLinkedList( pSLinkedList LinkedList )
