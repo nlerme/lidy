@@ -4,7 +4,7 @@ Lidy is a small cross-platform C library for sparse matrices handling distribute
 
 Compiling
 ---------
-Once the archive decompressed, type `make` in a terminal. Then, indicate the path of the "lib" directory in the variable environment "LD_LIBRARY_PATH" by typing `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:path_to_the_projet/lib`. Examples illustrating the features implemented in the library are provided in the "examples" directory".
+Once the archive decompressed, open a terminal and type `make`. Then, indicate the path of the "lib" directory with the environment variable "LD_LIBRARY_PATH" by typing `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:directory_of_the_project/lib`. Examples illustrating the features implemented in the library are provided in the "examples" directory".
 
 Documentation
 -------------
