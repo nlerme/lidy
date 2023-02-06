@@ -1,6 +1,8 @@
-#----------------------- Makefile variables --------------------------
-PROJECT_NAME   = Lidy
-VERSION        = 1.2.0
-GLOBAL_TARGET  = $(PROJECT_NAME)-$(VERSION)
-DESCRIPTION    = A small cross-platform C library for sparse matrices handling
-AUTHORS        = Nicolas Lermé
+#--- Variables --------------------------------------------------------------------------------------------
+PROJECT_NAME         = Lidy
+PROJECT_VERSION      = 1.2.0
+PROJECT_DESCRIPTION  = A small cross-platform C library for sparse matrices handling
+PROJECT_AUTHORS      = Nicolas Lermé
+PROJECT_LICENSE      = LGPL-v3
+PROJECT_LAST_RELEASE = `date`
+GLOBAL_TARGET        = $(PROJECT_NAME)-$(PROJECT_VERSION)

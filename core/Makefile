@@ -1,4 +1,4 @@
-#------------------------------- Makefile variable ----------------------------------
+#--- Variables --------------------------------------------------------------------------------------
 include ../Makefile.common
 COMMON_MAKEFILE = ../Makefile.common
 OUTPUT_DIR      = ../lib
@@ -14,13 +14,16 @@ FILES_EXT       = c
 SRC             = $(notdir $(wildcard $(SRC_DIR)/*.$(FILES_EXT)))
 OBJ             = $(SRC:%.$(FILES_EXT)=$(OBJ_DIR)/%.o)
 
-#---------------------------------- Makefile core -----------------------------------
+#--- Rules ------------------------------------------------------------------------------------------
 all: header depend $(OUTPUT_DIR)/lib$(GLOBAL_TARGET).a $(OUTPUT_DIR)/lib$(GLOBAL_TARGET).so footer
 
 header:
 	@echo "[ Core ]"
 
 depend:
+ifeq ("$(wildcard $(OBJ_DIR))","")
+	@mkdir $(OBJ_DIR) $(OUTPUT_DIR)
+endif
 	@echo -n "  + Generate dependencies : "
 ifneq ($(strip $(SRC)),)
 	@$(CXX) $(INCS) -MM $(SRC:%=$(SRC_DIR)/%) \
@@ -47,7 +50,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(FILES_EXT)
 
 clean: header
 	@echo -n "  + Delete objects and libraries : "
-	@\rm -rf $(OBJ) $(OUTPUT_DIR)/lib$(GLOBAL_TARGET).*
+	@\rm -rf $(OBJ_DIR) $(OUTPUT_DIR)
 	@echo "OK"
 
 footer:

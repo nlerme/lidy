@@ -1,4 +1,4 @@
-#------------------------------- Makefile variable ----------------------------------
+#--- Variables --------------------------------------------------------------------------------------
 include ../../Makefile.common
 CXX          = gcc
 CXXFLAGS     = -O3 -Wall -g
@@ -15,7 +15,7 @@ OBJ          = $(SRC:%.$(FILES_EXT)=$(OBJ_DIR)/%.o)
 DESCRIPTION  = Scalar/matrix operators
 LOCAL_TARGET = example6
 
-#---------------------------------- Makefile core -----------------------------------
+#--- Rules ------------------------------------------------------------------------------------------
 all: header depend $(LOCAL_TARGET) footer
 
 header:

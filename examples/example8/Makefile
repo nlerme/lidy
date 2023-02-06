@@ -1,4 +1,4 @@
-#------------------------------- Makefile variable ----------------------------------
+#--- Variables --------------------------------------------------------------------------------------
 include ../../Makefile.common
 CXX          = gcc
 CXXFLAGS     = -O3 -Wall -g
@@ -15,7 +15,7 @@ OBJ          = $(SRC:%.$(FILES_EXT)=$(OBJ_DIR)/%.o)
 DESCRIPTION  = Exponentiation
 LOCAL_TARGET = example8
 
-#---------------------------------- Makefile core -----------------------------------
+#--- Rules ------------------------------------------------------------------------------------------
 all: header depend $(LOCAL_TARGET) footer
 
 header:
